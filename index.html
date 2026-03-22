@@ -3,89 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的网站</title>
+  <title>LSP开发者 | 全屋定制设计工具</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #1a1a18;
-      --muted: #6b6b64;
-      --line: #e2e0d8;
-      --bg: #f9f7f2;
-      --accent: #c8a96e;
+      --ink: #2c2825;
+      --muted: #8a8279;
+      --line: #d4cfc6;
+      --bg: #faf9f7;
+      --warm: #f5f1eb;
+      --accent: #8b7355;
+      --accent-deep: #5c4d3d;
+      --white: #ffffff;
     }
 
-    html { font-size: 16px; }
+    html { font-size: 16px; scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
       color: var(--ink);
       font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;
       font-weight: 300;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      line-height: 1.8;
     }
 
     /* ── Header ── */
     header {
-      padding: 2.5rem 3rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1.6rem 4rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 100;
+      background: var(--bg);
       border-bottom: 1px solid var(--line);
     }
 
     .logo {
       font-family: 'Noto Serif SC', serif;
-      font-size: 1.25rem;
+      font-size: 1rem;
       font-weight: 600;
-      letter-spacing: .05em;
+      letter-spacing: .15em;
       color: var(--ink);
       text-decoration: none;
     }
 
+    nav { display: flex; gap: 3rem; }
+
     nav a {
-      font-size: .85rem;
+      font-size: .78rem;
       color: var(--muted);
       text-decoration: none;
-      margin-left: 2rem;
       letter-spacing: .08em;
-      transition: color .2s;
+      transition: color .25s;
     }
-    nav a:hover { color: var(--ink); }
+
+    nav a:hover { color: var(--accent-deep); }
 
     /* ── Hero ── */
     .hero {
-      flex: 1;
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 3rem;
-      max-width: 860px;
+      align-items: center;
+      padding: 8rem 4rem 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
     }
 
     .hero-label {
-      font-size: .75rem;
-      letter-spacing: .2em;
+      font-size: .7rem;
+      letter-spacing: .25em;
       color: var(--accent);
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp .6s .1s forwards;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
     }
 
     h1 {
       font-family: 'Noto Serif SC', serif;
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-size: clamp(2.8rem, 5vw, 4rem);
       font-weight: 300;
       line-height: 1.25;
-      letter-spacing: -.01em;
-      margin-bottom: 1.8rem;
-      opacity: 0;
-      animation: fadeUp .7s .2s forwards;
+      margin-bottom: 2rem;
     }
 
     h1 em {
@@ -95,88 +114,413 @@
 
     .hero-desc {
       font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.9;
-      max-width: 520px;
-      margin-bottom: 2.8rem;
-      opacity: 0;
-      animation: fadeUp .7s .35s forwards;
+      color: #5a554e;
+      line-height: 2;
+      max-width: 480px;
+      margin-bottom: 3rem;
     }
 
-    .btn {
-      display: inline-block;
-      padding: .75rem 2rem;
-      border: 1px solid var(--ink);
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+      font-size: .8rem;
+      letter-spacing: .12em;
       color: var(--ink);
       text-decoration: none;
-      font-size: .85rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      transition: background .2s, color .2s;
-      opacity: 0;
-      animation: fadeUp .7s .5s forwards;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--ink);
+      transition: all .3s;
     }
-    .btn:hover { background: var(--ink); color: var(--bg); }
 
-    /* ── Divider line ── */
-    .rule {
-      width: 48px;
-      height: 1px;
+    .hero-cta:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .hero-cta svg {
+      width: 16px;
+      height: 16px;
+      transition: transform .3s;
+    }
+
+    .hero-cta:hover svg { transform: translateX(4px); }
+
+    /* ── Decorative Code ── */
+    .hero-visual {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .code-card {
+      background: #fff;
+      border: 1px solid #e0dbd3;
+      padding: 2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .72rem;
+      line-height: 1.9;
+      color: #3d3832;
+      box-shadow: 0 8px 30px rgba(0,0,0,.05);
+      max-width: 400px;
+    }
+
+    .code-card .comment { color: #9a9289; }
+    .code-card .keyword { color: #6b5a45; }
+    .code-card .string { color: #8b7355; }
+    .code-card .function { color: #5a7a8a; }
+    .code-card .type { color: #7a6a9a; }
+
+    /* ── About Section ── */
+    .about {
+      background: var(--warm);
+      padding: 7rem 4rem;
+    }
+
+    .about-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .section-label {
+      font-size: .65rem;
+      letter-spacing: .3em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text {
+      font-size: .95rem;
+      color: #5a554e;
+      line-height: 2;
+    }
+
+    .about-text p + p { margin-top: 1.5rem; }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .skill-dot {
+      width: 6px;
+      height: 6px;
       background: var(--accent);
-      margin: 3rem;
-      opacity: 0;
-      animation: fadeUp .6s .6s forwards;
+      border-radius: 50%;
+      margin-top: .7rem;
+      flex-shrink: 0;
+    }
+
+    .skill-item h4 {
+      font-size: .9rem;
+      font-weight: 500;
+      margin-bottom: .3rem;
+    }
+
+    .skill-item p {
+      font-size: .82rem;
+      color: #6a635a;
+      line-height: 1.7;
+    }
+
+    /* ── Projects ── */
+    .projects {
+      padding: 7rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .projects-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 2.5rem;
+      transition: all .35s;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px rgba(0,0,0,.05);
+    }
+
+    .project-year {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      color: #8b7355;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: .8rem;
+    }
+
+    .project-card p {
+      font-size: .85rem;
+      color: #6a635a;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+    }
+
+    .project-tag {
+      font-size: .62rem;
+      letter-spacing: .06em;
+      color: #8a8279;
+      padding: .25rem .7rem;
+      border: 1px solid #d4cfc6;
+    }
+
+    /* ── Contact ── */
+    .contact {
+      background: var(--ink);
+      padding: 6rem 4rem;
+      text-align: center;
+    }
+
+    .contact-label {
+      font-size: .65rem;
+      letter-spacing: .3em;
+      color: #c8a96e;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: #f5f1eb;
+      margin-bottom: 1rem;
+    }
+
+    .contact-email {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .9rem;
+      color: #c8a96e;
+      text-decoration: none;
+      padding: .8rem 2rem;
+      border: 1px solid #c8a96e;
+      display: inline-block;
+      margin-top: 2rem;
+      transition: all .3s;
+    }
+
+    .contact-email:hover {
+      background: #c8a96e;
+      color: #2c2825;
     }
 
     /* ── Footer ── */
     footer {
-      padding: 1.5rem 3rem;
-      border-top: 1px solid var(--line);
-      font-size: .78rem;
-      color: var(--muted);
-      letter-spacing: .05em;
+      padding: 2rem 4rem;
+      background: var(--warm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .75rem;
+      color: #6a635a;
     }
 
-    /* ── Animation ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
+    footer a {
+      color: #6a635a;
+      text-decoration: none;
+      transition: color .25s;
     }
+
+    footer a:hover { color: #8b7355; }
 
     /* ── Responsive ── */
-    @media (max-width: 600px) {
-      header { padding: 1.5rem; }
+    @media (max-width: 900px) {
+      header { padding: 1.2rem 1.5rem; }
       nav { display: none; }
-      .hero { padding: 3.5rem 1.5rem; }
-      footer { padding: 1.2rem 1.5rem; }
+      .hero { padding: 7rem 1.5rem 3rem; flex-direction: column; }
+      .hero-visual { display: none; }
+      .about { padding: 4rem 1.5rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .projects { padding: 4rem 1.5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .contact { padding: 4rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: .8rem; text-align: center; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <a class="logo" href="/">网站名称</a>
+    <a class="logo" href="/">定制工具</a>
     <nav>
-      <a href="#">关于</a>
-      <a href="#">作品</a>
-      <a href="#">联系</a>
+      <a href="#about">关于</a>
+      <a href="#projects">项目</a>
+      <a href="#contact">联系</a>
     </nav>
   </header>
 
   <main>
-    <div class="hero">
-      <p class="hero-label">欢迎来到我的空间</p>
-      <h1>你好，这里是<br><em>我的个人网站</em></h1>
-      <p class="hero-desc">
-        这是一个简洁的起点。你可以在这里分享你的想法、作品或任何你想展示给世界的内容。
-      </p>
-      <a class="btn" href="#">了解更多</a>
-    </div>
-    <div class="rule"></div>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-label">LSP 开发 · 全屋定制</p>
+        <h1>用代码<br><em>定义家的模样</em></h1>
+        <p class="hero-desc">
+          专注于全屋定制设计工具开发，探索 LSP 协议在 CAD 设计软件中的应用。
+          用技术诠释空间美学，用代码构建家的无限可能。
+        </p>
+        <a class="hero-cta" href="#about">
+          探索更多
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+      <div class="hero-visual">
+        <div class="code-card">
+          <span class="comment">// LSP 协议 · 定制家具类型</span><br><br>
+          <span class="keyword">export interface</span> <span class="type">Furniture</span> {<br>
+          &nbsp;&nbsp;<span class="string">id</span>: <span class="type">string</span>;<br>
+          &nbsp;&nbsp;<span class="string">type</span>: <span class="type">'cabinet'</span> |<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">'shelf'</span> |<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">'wardrobe'</span>;<br>
+          &nbsp;&nbsp;<span class="string">dimensions</span>: <span class="type">Size</span>;<br>
+          &nbsp;&nbsp;<span class="string">material</span>: <span class="type">Material</span>;<br>
+          }<br><br>
+          <span class="keyword">export type</span> <span class="function">DesignResult</span> = <span class="type">...</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div>
+          <p class="section-label">关于我</p>
+          <h2 class="section-title">技术与美学的交汇</h2>
+          <div class="about-text">
+            <p>全屋定制不仅是一种设计理念，更是对空间与生活的深度理解。我致力于用 LSP 技术为设计师打造高效、精准的数字化工具。</p>
+            <p>从参数化建模到智能排料，从实时渲染到协同设计，探索技术如何让定制家具的设计过程更加流畅与愉悦。</p>
+          </div>
+        </div>
+        <div class="skills-list">
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <div>
+              <h4>LSP 协议开发</h4>
+              <p>基于 JSON-RPC 构建语言服务器，实现智能补全、诊断与导航功能。</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <div>
+              <h4>参数化设计系统</h4>
+              <p>约束驱动的建模引擎，支持柜体尺寸自动适配与多样化风格配置。</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <div>
+              <h4>前端与图形渲染</h4>
+              <p>TypeScript + Canvas/WebGL 构建高性能设计工具，关注交互细节与视觉呈现。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+      <div class="projects-header">
+        <p class="section-label">项目展示</p>
+        <h2 class="section-title">技术实践</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <p class="project-year">2024</p>
+          <h3>全屋定制 LSP</h3>
+          <p>为定制家具设计软件开发的 Language Server，实现设计参数智能提示与错误检测。</p>
+          <div class="project-tags">
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">LSP</span>
+            <span class="project-tag">Node.js</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-year">2024</p>
+          <h3>柜体参数化设计器</h3>
+          <p>基于约束求解器的可视化柜体设计工具，支持按房间尺寸自动生成最佳布局。</p>
+          <div class="project-tags">
+            <span class="project-tag">Canvas</span>
+            <span class="project-tag">约束求解</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-year">2023</p>
+          <h3>材质纹理浏览器</h3>
+          <p>WebGL 驱动的材质预览系统，支持木纹、石材等材质的真实感渲染与对比。</p>
+          <div class="project-tags">
+            <span class="project-tag">WebGL</span>
+            <span class="project-tag">Three.js</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <p class="project-year">2023</p>
+          <h3>设计稿标注工具</h3>
+          <p>用于设计方案的协作标注系统，支持多方实时评论与尺寸自动提取。</p>
+          <div class="project-tags">
+            <span class="project-tag">WebSocket</span>
+            <span class="project-tag">协作</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <p class="contact-label">联系</p>
+      <h2 class="contact-title">期待交流探讨</h2>
+      <a class="contact-email" href="mailto:jjy@fzsji.cn">jjy@fzsji.cn</a>
+    </section>
   </main>
 
   <footer>
-    © 2025 网站名称 · 保留所有权利
+    <div>© 2026 定制工具 · 用代码定义家</div>
+    <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2021003754号-1</a>
   </footer>
 
 </body>
