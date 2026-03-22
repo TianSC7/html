@@ -367,6 +367,17 @@
 
     footer a:hover { color: #8b7355; }
 
+    /* ── 访客统计 ── */
+    .busuanzi {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .busuanzi span {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+    }
+
     /* ── Responsive ── */
     @media (max-width: 900px) {
       header { padding: 1.2rem 1.5rem; }
@@ -520,8 +531,19 @@
 
   <footer>
     <div>© 2026 定制工具 · 用代码定义家</div>
-    <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2021003754号-1</a>
+    <div style="display: flex; align-items: center; gap: 1.5rem;">
+      <span id="busuanzi_container_site_pv" style="font-size: .7rem;">
+        总访问 <span id="busuanzi_value_site_pv">0</span> 次
+      </span>
+      <span id="busuanzi_container_site_uv" style="font-size: .7rem;">
+        访客 <span id="busuanzi_value_site_uv">0</span> 人
+      </span>
+      <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2021003754号-1</a>
+    </div>
   </footer>
+
+  <!-- 不蒜子统计 -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </body>
 </html>
