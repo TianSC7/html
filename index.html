@@ -308,46 +308,6 @@
       border: 1px solid #d4cfc6;
     }
 
-    /* ── Contact ── */
-    .contact {
-      background: var(--ink);
-      padding: 6rem 4rem;
-      text-align: center;
-    }
-
-    .contact-label {
-      font-size: .65rem;
-      letter-spacing: .3em;
-      color: #c8a96e;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-title {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 2.2rem;
-      font-weight: 300;
-      color: #f5f1eb;
-      margin-bottom: 1rem;
-    }
-
-    .contact-email {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .9rem;
-      color: #c8a96e;
-      text-decoration: none;
-      padding: .8rem 2rem;
-      border: 1px solid #c8a96e;
-      display: inline-block;
-      margin-top: 2rem;
-      transition: all .3s;
-    }
-
-    .contact-email:hover {
-      background: #c8a96e;
-      color: #2c2825;
-    }
-
     /* ── Footer ── */
     footer {
       padding: 2rem 4rem;
@@ -377,7 +337,6 @@
       .about-inner { grid-template-columns: 1fr; gap: 3rem; }
       .projects { padding: 4rem 1.5rem; }
       .projects-grid { grid-template-columns: 1fr; }
-      .contact { padding: 4rem 1.5rem; }
       footer { padding: 1.5rem; flex-direction: column; gap: .8rem; text-align: center; }
     }
   </style>
@@ -397,9 +356,8 @@
   <header>
     <a class="logo" href="/">定制工具</a>
     <nav>
-      <a href="#about">关于</a>
       <a href="#projects">项目</a>
-      <a href="#contact">联系</a>
+      <a href="#about">关于</a>
     </nav>
   </header>
 
@@ -432,43 +390,6 @@
           &nbsp;&nbsp;<span class="string">material</span>: <span class="type">Material</span>;<br>
           }<br><br>
           <span class="keyword">export type</span> <span class="function">DesignResult</span> = <span class="type">...</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-      <div class="about-inner">
-        <div>
-          <p class="section-label">关于我</p>
-          <h2 class="section-title">技术与美学的交汇</h2>
-          <div class="about-text">
-            <p>全屋定制不仅是一种设计理念，更是对空间与生活的深度理解。我致力于用 LSP 技术为设计师打造高效、精准的数字化工具。</p>
-            <p>从参数化建模到智能排料，从实时渲染到协同设计，探索技术如何让定制家具的设计过程更加流畅与愉悦。</p>
-          </div>
-        </div>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-dot"></div>
-            <div>
-              <h4>LSP 协议开发</h4>
-              <p>基于 JSON-RPC 构建语言服务器，实现智能补全、诊断与导航功能。</p>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot"></div>
-            <div>
-              <h4>参数化设计系统</h4>
-              <p>约束驱动的建模引擎，支持柜体尺寸自动适配与多样化风格配置。</p>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-dot"></div>
-            <div>
-              <h4>前端与图形渲染</h4>
-              <p>TypeScript + Canvas/WebGL 构建高性能设计工具，关注交互细节与视觉呈现。</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -520,11 +441,41 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-      <p class="contact-label">联系</p>
-      <h2 class="contact-title">期待交流探讨</h2>
-      <a class="contact-email" href="mailto:jjy@fzsji.cn">jjy@fzsji.cn</a>
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div>
+          <p class="section-label">关于我</p>
+          <h2 class="section-title">技术与美学的交汇</h2>
+          <div class="about-text">
+            <p>全屋定制不仅是一种设计理念，更是对空间与生活的深度理解。我致力于用 LSP 技术为设计师打造高效、精准的数字化工具。</p>
+            <p>从参数化建模到智能排料，从实时渲染到协同设计，探索技术如何让定制家具的设计过程更加流畅与愉悦。</p>
+          </div>
+        </div>
+        <div class="skills-list">
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <div>
+              <h4>LSP 协议开发</h4>
+              <p>基于 JSON-RPC 构建语言服务器，实现智能补全、诊断与导航功能。</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <div>
+              <h4>参数化设计系统</h4>
+              <p>约束驱动的建模引擎，支持柜体尺寸自动适配与多样化风格配置。</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <div>
+              <h4>前端与图形渲染</h4>
+              <p>TypeScript + Canvas/WebGL 构建高性能设计工具，关注交互细节与视觉呈现。</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
