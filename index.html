@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的网站</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --muted: #6b6b64;
+      --line: #e2e0d8;
+      --bg: #f9f7f2;
+      --accent: #c8a96e;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    nav a {
+      font-size: .85rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 2rem;
+      letter-spacing: .08em;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--ink); }
+
+    /* ── Hero ── */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 3rem;
+      max-width: 860px;
+    }
+
+    .hero-label {
+      font-size: .75rem;
+      letter-spacing: .2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp .6s .1s forwards;
+    }
+
+    h1 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.25;
+      letter-spacing: -.01em;
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: fadeUp .7s .2s forwards;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 520px;
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      animation: fadeUp .7s .35s forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .75rem 2rem;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: .85rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: background .2s, color .2s;
+      opacity: 0;
+      animation: fadeUp .7s .5s forwards;
+    }
+    .btn:hover { background: var(--ink); color: var(--bg); }
+
+    /* ── Divider line ── */
+    .rule {
+      width: 48px;
+      height: 1px;
+      background: var(--accent);
+      margin: 3rem;
+      opacity: 0;
+      animation: fadeUp .6s .6s forwards;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 1.5rem 3rem;
+      border-top: 1px solid var(--line);
+      font-size: .78rem;
+      color: var(--muted);
+      letter-spacing: .05em;
+    }
+
+    /* ── Animation ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header { padding: 1.5rem; }
+      nav { display: none; }
+      .hero { padding: 3.5rem 1.5rem; }
+      footer { padding: 1.2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="/">网站名称</a>
+    <nav>
+      <a href="#">关于</a>
+      <a href="#">作品</a>
+      <a href="#">联系</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="hero-label">欢迎来到我的空间</p>
+      <h1>你好，这里是<br><em>我的个人网站</em></h1>
+      <p class="hero-desc">
+        这是一个简洁的起点。你可以在这里分享你的想法、作品或任何你想展示给世界的内容。
+      </p>
+      <a class="btn" href="#">了解更多</a>
+    </div>
+    <div class="rule"></div>
+  </main>
+
+  <footer>
+    © 2025 网站名称 · 保留所有权利
+  </footer>
+
+</body>
+</html>
