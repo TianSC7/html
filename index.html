@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LSP开发者 | 全屋定制设计工具</title>
+  <title>全屋定制设计工具</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap');
 
@@ -32,15 +32,10 @@
 
     /* ── Header ── */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
       padding: 1.6rem 4rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 100;
       background: var(--bg);
       border-bottom: 1px solid var(--line);
     }
@@ -71,7 +66,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 8rem 4rem 4rem;
+      padding: 4rem 4rem 4rem;
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -157,13 +152,13 @@
     .code-card {
       background: #fff;
       border: 1px solid #e0dbd3;
-      padding: 2rem;
+      padding: 1.5rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: .72rem;
-      line-height: 1.9;
+      font-size: .7rem;
+      line-height: 1.8;
       color: #3d3832;
       box-shadow: 0 8px 30px rgba(0,0,0,.05);
-      max-width: 400px;
+      max-width: 280px;
     }
 
     .code-card .comment { color: #9a9289; }
@@ -196,7 +191,7 @@
     }
 
     .section-title {
-      font-family: 'Noto Serif SC', serif;
+      font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
       font-size: 2rem;
       font-weight: 400;
       margin-bottom: 1.5rem;
@@ -245,9 +240,10 @@
 
     /* ── Projects ── */
     .projects {
-      padding: 7rem 4rem;
+      padding: 10rem 4rem;
       max-width: 1200px;
       margin: 0 auto;
+      min-height: 100vh;
     }
 
     .projects-header {
@@ -257,7 +253,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
 
@@ -354,7 +350,7 @@
 <body>
 
   <header>
-    <a class="logo" href="/">定制工具</a>
+    <a class="logo" href="/">全屋定制 Lisp</a>
     <nav>
       <a href="#projects">项目</a>
       <a href="#about">关于</a>
@@ -365,13 +361,12 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-content">
-        <p class="hero-label">LSP 开发 · 全屋定制</p>
-        <h1>用代码<br><em>定义家的模样</em></h1>
+        <p class="hero-label">定制工具</p>
+        <h1>用工具<br><em>提升工作效率</em></h1>
         <p class="hero-desc">
-          专注于全屋定制设计工具开发，探索 LSP 协议在 CAD 设计软件中的应用。
-          用技术诠释空间美学，用代码构建家的无限可能。
+          专注于全屋定制设计工具开发；支持 Autodesk CAD。开发 lisp 和 net8.0 的项目
         </p>
-        <a class="hero-cta" href="#about">
+        <a class="hero-cta" href="#projects">
           探索更多
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -380,16 +375,16 @@
       </div>
       <div class="hero-visual">
         <div class="code-card">
-          <span class="comment">// LSP 协议 · 定制家具类型</span><br><br>
-          <span class="keyword">export interface</span> <span class="type">Furniture</span> {<br>
-          &nbsp;&nbsp;<span class="string">id</span>: <span class="type">string</span>;<br>
-          &nbsp;&nbsp;<span class="string">type</span>: <span class="type">'cabinet'</span> |<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">'shelf'</span> |<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">'wardrobe'</span>;<br>
-          &nbsp;&nbsp;<span class="string">dimensions</span>: <span class="type">Size</span>;<br>
-          &nbsp;&nbsp;<span class="string">material</span>: <span class="type">Material</span>;<br>
-          }<br><br>
-          <span class="keyword">export type</span> <span class="function">DesignResult</span> = <span class="type">...</span>
+          <span class="comment">// Welcome to LSP Tools</span><br><br>
+          <span class="keyword">(defun</span> <span class="function">welcome</span> <span class="keyword">()</span><br>
+          &nbsp;&nbsp;<span class="keyword">(print</span> <span class="string">"Custom Furniture Design"</span><span class="keyword">)</span><br>
+          &nbsp;&nbsp;<span class="keyword">(print</span> <span class="string">"AutoCAD LISP Tools"</span><span class="keyword">)</span><br>
+          &nbsp;&nbsp;<span class="keyword">(print</span> <span class="string">"Efficient & Precise"</span><span class="keyword">)</span><br>
+          &nbsp;&nbsp;<span class="keyword">(print</span> <span class="string">"Start Creating Now"</span><span class="keyword">)</span><br>
+          &nbsp;&nbsp;<span class="keyword">(print</span> <span class="string">"Framework Generation"</span><span class="keyword">)</span><br>
+          &nbsp;&nbsp;<span class="keyword">(print</span> <span class="string">"Smart Annotation"</span><span class="keyword">)</span><br>
+          &nbsp;&nbsp;<span class="keyword">(princ))</span><br><br>
+          <span class="comment">// (welcome)</span>
         </div>
       </div>
     </section>
@@ -397,45 +392,47 @@
     <!-- Projects -->
     <section class="projects" id="projects">
       <div class="projects-header">
-        <p class="section-label">项目展示</p>
-        <h2 class="section-title">技术实践</h2>
+        <h2 class="section-title">定制系统</h2>
       </div>
       <div class="projects-grid">
         <div class="project-card">
-          <p class="project-year">2024</p>
-          <h3>全屋定制 LSP</h3>
-          <p>为定制家具设计软件开发的 Language Server，实现设计参数智能提示与错误检测。</p>
+          <p class="project-year">框架</p>
+          <h3>框架生成系统</h3>
+          <p>平面框架、侧面框架、抽屉框架、图库框架等核心框架插件，毫秒级生成标准柜体结构，精准无误。</p>
           <div class="project-tags">
-            <span class="project-tag">TypeScript</span>
-            <span class="project-tag">LSP</span>
-            <span class="project-tag">Node.js</span>
+            <span class="project-tag">Lisp</span>
+            <span class="project-tag">AutoCAD</span>
+            <span class="project-tag">框架生成</span>
           </div>
         </div>
         <div class="project-card">
-          <p class="project-year">2024</p>
-          <h3>柜体参数化设计器</h3>
-          <p>基于约束求解器的可视化柜体设计工具，支持按房间尺寸自动生成最佳布局。</p>
+          <p class="project-year">标注</p>
+          <h3>标注测量工具</h3>
+          <p>中线标注、竖向标注、快捷标注、删0标注、快速引线，让图纸标注标准化、自动化。</p>
           <div class="project-tags">
-            <span class="project-tag">Canvas</span>
-            <span class="project-tag">约束求解</span>
+            <span class="project-tag">标注</span>
+            <span class="project-tag">测量</span>
+            <span class="project-tag">自动化</span>
           </div>
         </div>
         <div class="project-card">
-          <p class="project-year">2023</p>
-          <h3>材质纹理浏览器</h3>
-          <p>WebGL 驱动的材质预览系统，支持木纹、石材等材质的真实感渲染与对比。</p>
+          <p class="project-year">编辑</p>
+          <h3>快速编辑工具</h3>
+          <p>快速剪切、动态等分、拉直器、对齐功能、多重拉伸，高频操作极速完成，减少重复动作。</p>
           <div class="project-tags">
-            <span class="project-tag">WebGL</span>
-            <span class="project-tag">Three.js</span>
+            <span class="project-tag">编辑</span>
+            <span class="project-tag">效率</span>
+            <span class="project-tag">快捷操作</span>
           </div>
         </div>
         <div class="project-card">
-          <p class="project-year">2023</p>
-          <h3>设计稿标注工具</h3>
-          <p>用于设计方案的协作标注系统，支持多方实时评论与尺寸自动提取。</p>
+          <p class="project-year">图层</p>
+          <h3>图层管理系统</h3>
+          <p>初始化图层、切换图层、冻结图层、隐藏、切换线性，图层操作集中管理，告别混乱图纸。</p>
           <div class="project-tags">
-            <span class="project-tag">WebSocket</span>
-            <span class="project-tag">协作</span>
+            <span class="project-tag">图层</span>
+            <span class="project-tag">管理</span>
+            <span class="project-tag">CAD</span>
           </div>
         </div>
       </div>
@@ -446,32 +443,32 @@
       <div class="about-inner">
         <div>
           <p class="section-label">关于我</p>
-          <h2 class="section-title">技术与美学的交汇</h2>
+          <h2 class="section-title">技术与匠艺的交汇</h2>
           <div class="about-text">
-            <p>全屋定制不仅是一种设计理念，更是对空间与生活的深度理解。我致力于用 LSP 技术为设计师打造高效、精准的数字化工具。</p>
-            <p>从参数化建模到智能排料，从实时渲染到协同设计，探索技术如何让定制家具的设计过程更加流畅与愉悦。</p>
+            <p>全屋定制不仅是一种设计工具，更是对图纸与生产的深度理解。我致力于用 AutoCAD LISP/DLL 技术为设计师打造高效、精准的二维绘图利器。</p>
+            <p>从参数化柜体拆单到智能尺寸标注，从批量出图到施工图规范交付，探索技术如何让定制家具的绘图流程更加流畅与高效。</p>
           </div>
         </div>
         <div class="skills-list">
           <div class="skill-item">
             <div class="skill-dot"></div>
             <div>
-              <h4>LSP 协议开发</h4>
-              <p>基于 JSON-RPC 构建语言服务器，实现智能补全、诊断与导航功能。</p>
+              <h4> 智能绘图辅助</h4>
+              <p>在 CAD 环境中自动生成柜体二维图块，支持标准件库调用，一键插入平面图、立面图，告别重复手绘。</p>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-dot"></div>
             <div>
-              <h4>参数化设计系统</h4>
-              <p>约束驱动的建模引擎，支持柜体尺寸自动适配与多样化风格配置。</p>
+              <h4> 参数化尺寸驱动</h4>
+              <p>输入房间净尺寸，LISP 程序自动计算柜体拆单尺寸，驱动图纸联动更新，修改一处全图同步。</p>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-dot"></div>
             <div>
-              <h4>前端与图形渲染</h4>
-              <p>TypeScript + Canvas/WebGL 构建高性能设计工具，关注交互细节与视觉呈现。</p>
+              <h4> 批量出图与标注</h4>
+              <p>自动添加尺寸标注、材料说明、编号索引，支持批量输出多张施工图，规范化交付生产车间。</p>
             </div>
           </div>
         </div>
@@ -480,7 +477,7 @@
   </main>
 
   <footer>
-    <div>© 2026 定制工具 · 用代码定义家</div>
+    <div>© 2026 全屋定制工具 · 起飞飞</div>
     <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2021003754号-1</a>
   </footer>
 
