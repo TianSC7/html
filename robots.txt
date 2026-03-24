@@ -1,0 +1,23 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tiansc7.github.io/html/sitemap.xml
+
+# 百度爬虫特殊规则
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Google爬虫
+User-agent: Googlebot
+Allow: /
+
+# 必应爬虫
+User-agent: Bingbot
+Allow: /
+
+# Disallow
+Disallow: /node_modules/
+Disallow: /.git/
