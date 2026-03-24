@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://tiansc7.github.io/html/sitemap.xml
+Sitemap: https://www.fzsji.cn/sitemap.xml
 
 # 百度爬虫特殊规则
 User-agent: Baiduspider
